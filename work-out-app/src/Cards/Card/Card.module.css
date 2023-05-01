@@ -1,0 +1,10 @@
+.contentWraper{
+border: 2px solid yellow;
+border-radius: 5px;
+padding: 10px;
+margin: 10px;
+display: inline-block;
+}
+.tileStyle{
+     text-align: center;
+}
