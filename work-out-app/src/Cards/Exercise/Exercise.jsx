@@ -2,22 +2,19 @@ import React from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import styles from "./Exercise.module.css";
 export default function Exercise({ exercise }) {
+  const onHoverExercise = () => {
+    console.log("Hovered");
+  };
+
   return (
-    <div>
-      <div>
-        {exercise.exercise}
-        <span>
-          <strong> {exercise.repetisions}</strong>
-        </span>
-        <a
-          href={exercise.link}
-          className={styles.iconStle}
-          target="_blank"
-          rel="noreferrer"
-        >
+    <>
+      <div className={styles.postinTest}>{exercise.exercise}</div>
+      <strong onClick={onHoverExercise} className={styles.exerciseRepetitions}>
+        {exercise.repetisions}
+        <div href={exercise.link} className={styles.iconStle}>
           <AiOutlineInfoCircle />
-        </a>
-      </div>
-    </div>
+        </div>
+      </strong>
+    </>
   );
 }

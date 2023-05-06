@@ -1,6 +1,7 @@
 var uiqueId = require("uniqid");
 const exerciseObject = [
   {
+    weekNumber: "Week1",
     id: uiqueId(),
     day: "Monday",
     bodyPart: "Legs",
@@ -9,7 +10,7 @@ const exerciseObject = [
         exercise: "1. Barbell squats (high trap bar)",
         link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/the-barbell-squat.jpg",
         repetisions: "3x12",
-        exId: "78687462387",
+        exId: uiqueId(),
       },
       {
         exercise: "2. Leg press (low foot placement)",
@@ -20,7 +21,7 @@ const exerciseObject = [
       {
         exercise: "3. Deadlift with dumbbells (pause for 1 sec at the bottom)",
         link: "https://media.tenor.com/kyOyzUcfIpMAAAAC/dumbbell-romanian.gif",
-        repetisions3: "3x8",
+        repetisions: "3x8",
         exId: uiqueId(),
       },
       {
@@ -39,7 +40,9 @@ const exerciseObject = [
     ],
   },
   {
+    weekNumber: "Week1",
     id: uiqueId(),
+
     day: "Wednesday",
     bodyPart: "Chest, Biceps, Shoulders",
     exercises: [
@@ -58,7 +61,7 @@ const exerciseObject = [
       {
         exercise: "3.Incline dumbbell press (45°)",
         link: "https://media.tenor.com/9T1dx6LbbgwAAAAC/2inclne-dumbel-press.gif",
-        repetisions3: "3x8",
+        repetisions: "3x8",
         exId: uiqueId(),
       },
       {
@@ -88,6 +91,7 @@ const exerciseObject = [
     ],
   },
   {
+    weekNumber: "Week1",
     id: uiqueId(),
     day: "Monday",
     bodyPart: "Legs",
@@ -107,7 +111,7 @@ const exerciseObject = [
       {
         exercise: "3. Deadlift with dumbbells (pause for 1 sec at the bottom)",
         link: "https://media.tenor.com/kyOyzUcfIpMAAAAC/dumbbell-romanian.gif",
-        repetisions3: "3x8",
+        repetisions: "3x8",
         exId: uiqueId(),
       },
       {
@@ -125,6 +129,17 @@ const exerciseObject = [
       },
     ],
   },
+];
+
+export const weeksDays = [
+  "Week 1",
+  "Week 2",
+  "Week 3",
+  "Week 4",
+  "Week 5",
+  "Week 6",
+  "Week 7",
+  "Week 8",
 ];
 
 export default exerciseObject;
