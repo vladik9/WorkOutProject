@@ -5,7 +5,7 @@ import styles from "./Exercise.module.css";
 export default function Exercise({ exercise, handleModalExecute }) {
   return (
     <>
-      <div className={styles.postinTest}>{exercise.exercise}</div>
+      <div className={styles.elementSize}>{exercise.exercise}</div>
       <strong
         onClick={() => handleModalExecute(exercise.link, exercise.repetisions)}
         className={styles.exerciseRepetitions}
