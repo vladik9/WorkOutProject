@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 
 import styles from "./Exercise.module.css";
 export default function Exercise({ exercise, handleModalExecute }) {
@@ -12,7 +12,9 @@ export default function Exercise({ exercise, handleModalExecute }) {
       >
         {exercise.repetisions}
         <div href={exercise.link} className={styles.iconStle}>
-          <AiOutlineInfoCircle />
+          <sup>
+            <BsBoxArrowUpRight />
+          </sup>
         </div>
       </strong>
     </>

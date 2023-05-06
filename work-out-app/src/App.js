@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import Cards from "./Cards/Cards";
 import styles from "./Cards/Cards.module.css";
 import navStyles from "./Navigator/Navigator.module.css";
-import stylesModal from "./App.module.css";
 import exerciseObject from "./exercisesObject";
 import { weeksDays } from "./exercisesObject";
 import Navigator from "./Navigator/Navigator";
 import Modal from "./Cards/Exercise/Modal/Modal";
 function App() {
   const [currentWeekNumber, setCurrentWeekNumber] = useState(weeksDays[0]);
+  const [currentExercise, setCurrentExercise] = useState({
+    link: "",
+    nbOfSets: "",
+    category: "",
+  });
   const [isOpen, setIsOpen] = useState(false);
   const handleModalExecute = (exerciseLink, repetitions) => {
+    setCurrentExercise({ link: exerciseLink, nbOfSets: repetitions });
     setIsOpen(true);
   };
   return (
@@ -27,7 +32,11 @@ function App() {
           handleModalExecute={handleModalExecute}
         />
       </div>
-      <main>{isOpen && <Modal setIsOpen={setIsOpen} />}</main>
+      <main>
+        {isOpen && (
+          <Modal currentExercise={currentExercise} setIsOpen={setIsOpen} />
+        )}
+      </main>
     </>
   );
 }

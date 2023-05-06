@@ -8,32 +8,32 @@ const exerciseObject = [
     exercises: [
       {
         exercise: "1. Barbell squats (high trap bar)",
-        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/the-barbell-squat.jpg",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/05/low-bar-squat-form.gif",
         repetisions: "3x12",
         exId: uiqueId(),
       },
       {
         exercise: "2. Leg press (low foot placement)",
-        link: "https://graduatefitness.com/wp-content/uploads/2021/01/IMG_2775.gif",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/leg-press.gif",
         repetisions: "2x15",
         exId: uiqueId(),
       },
       {
         exercise: "3. Deadlift with dumbbells (pause for 1 sec at the bottom)",
-        link: "https://media.tenor.com/kyOyzUcfIpMAAAAC/dumbbell-romanian.gif",
+        link: "https://newlife.com.cy/wp-content/uploads/2019/12/03001301-Dumbbell-Deadlift_Back_360.gif",
         repetisions: "3x8",
         exId: uiqueId(),
       },
       {
         exercise: "4. Single-leg squats (with or without support)",
-        link: "https://i0.wp.com/thumbs.gfycat.com/MammothExaltedAyeaye-size_restricted.gif?w=1155&h=840",
+        link: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Bodyweight-Bulgarian-Split-Squat.gif",
         repetisions: "3x10",
         exId: uiqueId(),
       },
       {
         exercise:
           "5. Jumping jacks to maximum height (jumps  as high as possible)",
-        link: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2021/08/jumping-jacks.gif",
         repetisions: "4x10",
         exId: uiqueId(),
       },
@@ -42,7 +42,6 @@ const exerciseObject = [
   {
     weekNumber: "Week1",
     id: uiqueId(),
-
     day: "Wednesday",
     bodyPart: "Chest, Biceps, Shoulders",
     exercises: [
@@ -93,38 +92,44 @@ const exerciseObject = [
   {
     weekNumber: "Week1",
     id: uiqueId(),
-    day: "Monday",
-    bodyPart: "Legs",
+    day: "Friday",
+    bodyPart: "Back, Triceps",
     exercises: [
       {
-        exercise: "1. Barbell squats (high trap bar)",
-        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/the-barbell-squat.jpg",
-        repetisions: "3x12",
-        exId: uiqueId(),
-      },
-      {
-        exercise: "2. Leg press (low foot placement)",
-        link: "https://graduatefitness.com/wp-content/uploads/2021/01/IMG_2775.gif",
-        repetisions: "2x15",
-        exId: uiqueId(),
-      },
-      {
-        exercise: "3. Deadlift with dumbbells (pause for 1 sec at the bottom)",
-        link: "https://media.tenor.com/kyOyzUcfIpMAAAAC/dumbbell-romanian.gif",
-        repetisions: "3x8",
-        exId: uiqueId(),
-      },
-      {
-        exercise: "4. Single-leg squats (with or without support)",
-        link: "https://i0.wp.com/thumbs.gfycat.com/MammothExaltedAyeaye-size_restricted.gif?w=1155&h=840",
+        exercise:
+          "1. Deadlift (sumo or conventional, whichever is more comfortable)",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/02/barbell-deadlift-movement.gif",
         repetisions: "3x10",
         exId: uiqueId(),
       },
       {
-        exercise:
-          "5. Jumping jacks to maximum height (jumps  as high as possible)",
-        link: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif",
-        repetisions: "4x10",
+        exercise: "2.Bent-over barbell row ",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/08/barbell-bent-over-row.gif",
+        repetisions: "2x10",
+        exId: uiqueId(),
+      },
+      {
+        exercise: "3.Wide-grip lat pulldown",
+        link: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif",
+        repetisions: "3x10",
+        exId: uiqueId(),
+      },
+      {
+        exercise: "4. Dumbbell row on bench",
+        link: "https://d38ty1ecdjk742.cloudfront.net/wp-content/uploads/Dumbbell-Bent-over-Row_back_Back.gif",
+        repetisions: "3x12",
+        exId: uiqueId(),
+      },
+      {
+        exercise: "5. Dumbbell shrugs",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2021/11/dumbbell-shrug.gif",
+        repetisions: "3x12",
+        exId: uiqueId(),
+      },
+      {
+        exercise: "6. Triceps extensions with cable machine",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2021/10/cable-tricep-pushdown.gif",
+        repetisions: "3x12",
         exId: uiqueId(),
       },
     ],
