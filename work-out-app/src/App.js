@@ -7,25 +7,34 @@ import { weeksDays } from "./exercisesObject";
 import Navigator from "./Navigator/Navigator";
 import Modal from "./Cards/Exercise/Modal/Modal";
 function App() {
-  const [currentWeekNumber, setCurrentWeekNumber] = useState(weeksDays[0]);
+  const [selectedWeekNumber, setselectedWeekNumber] = useState(weeksDays[0]);
+  const [isOpen, setIsOpen] = useState(false);
   const [currentExercise, setCurrentExercise] = useState({
     link: "",
     nbOfSets: "",
     category: "",
   });
-  const [isOpen, setIsOpen] = useState(false);
   const handleModalExecute = (exerciseLink, repetitions) => {
     setCurrentExercise({ link: exerciseLink, nbOfSets: repetitions });
     setIsOpen(true);
   };
+  const setWeekDaySelected = (weekDaySelected) => {
+    setselectedWeekNumber(weekDaySelected);
+  };
+
   return (
     <>
       <div className={navStyles.navigatorPosition}>
-        {weeksDays.map((el) => (
-          <Navigator key={el} weekNumber={el} />
+        {weeksDays.map((item) => (
+          <Navigator
+            key={item}
+            weekNumber={item}
+            setWeekDaySelected={setWeekDaySelected}
+            selectedWeekNumber={selectedWeekNumber}
+          />
         ))}
       </div>
-      <div className={styles.currentWeekStyle}>{currentWeekNumber}</div>
+      <div className={styles.currentWeekStyle}>{selectedWeekNumber}</div>
       <div className={styles.cardWrapper}>
         <Cards
           dataObject={exerciseObject}

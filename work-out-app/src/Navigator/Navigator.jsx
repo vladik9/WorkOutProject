@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Navigator.module.css";
-export default function Navigator({ weekNumber }) {
-  const [weekDaySelected, setWeekDaySelected] = useState("Week 1");
-
+export default function Navigator({
+  weekNumber,
+  selectedWeekNumber,
+  setWeekDaySelected,
+}) {
   return (
     <div
       id={weekNumber}
+      style={{
+        backgroundColor: weekNumber === selectedWeekNumber ? "yellow" : "",
+      }}
       className={styles.navigatorElement}
       onClick={(event) => {
         setWeekDaySelected(event.target.id);
