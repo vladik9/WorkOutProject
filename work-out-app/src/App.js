@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import Cards from "./Cards/Cards";
 import styles from "./Cards/Cards.module.css";
 import navStyles from "./Navigator/Navigator.module.css";
-import exerciseObject from "./exercisesObject";
-import { weeksDays } from "./exercisesObject";
+import exerciseObject from "./weeksExercises/week2";
 import Navigator from "./Navigator/Navigator";
 import Modal from "./Cards/Exercise/Modal/Modal";
+const programedWeeks = [
+  "Week 1",
+  "Week 2",
+  "Week 3",
+  "Week 4",
+  "Week 5",
+  "Week 6",
+  "Week 7",
+  "Week 8",
+];
 function App() {
-  const [selectedWeekNumber, setselectedWeekNumber] = useState(weeksDays[0]);
+  const [selectedWeekNumber, setselectedWeekNumber] = useState(
+    programedWeeks[0]
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [currentExercise, setCurrentExercise] = useState({
     link: "",
@@ -25,7 +36,7 @@ function App() {
   return (
     <>
       <div className={navStyles.navigatorPosition}>
-        {weeksDays.map((item) => (
+        {programedWeeks.map((item) => (
           <Navigator
             key={item}
             weekNumber={item}

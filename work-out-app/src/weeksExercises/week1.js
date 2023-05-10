@@ -1,5 +1,5 @@
 var uiqueId = require("uniqid");
-const exerciseObject = [
+const week1 = [
   {
     weekNumber: "Week1",
     id: uiqueId(),
@@ -47,25 +47,25 @@ const exerciseObject = [
     exercises: [
       {
         exercise: "1. Bench press with 2 sec pause at the bottom",
-        link: "https://media1.giphy.com/media/QvXVzMT3oziRDud6df/giphy.gif?cid=6c09b952aqejufxjy7st2t6eu0u226er5sl56r5tk0xxhgss&rid=giphy.gif&ct=s",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/05/barbell-pause-bench.gif",
         repetisions: "3x10",
         exId: uiqueId(),
       },
       {
         exercise: "2.Dips (with or without additional weight) ",
-        link: "https://www.bodybuildingmealplan.com/wp-content/uploads/Weighted-Dips-scaled.jpg",
+        link: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Triceps-Dips.gif",
         repetisions: "3x10",
         exId: uiqueId(),
       },
       {
         exercise: "3.Incline dumbbell press (45°)",
-        link: "https://media.tenor.com/9T1dx6LbbgwAAAAC/2inclne-dumbel-press.gif",
+        link: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif",
         repetisions: "3x8",
         exId: uiqueId(),
       },
       {
         exercise: "4. Prayer bench press",
-        link: "https://media.tenor.com/Vhhf9PFyFSwAAAAC/exercise-close-grip-bench-press.gif",
+        link: "https://i.pinimg.com/originals/f5/07/a1/f507a173b4a8383cf04b56036c756c15.gif",
         repetisions: "3x15",
         exId: uiqueId(),
       },
@@ -77,7 +77,7 @@ const exerciseObject = [
       },
       {
         exercise: "6. Dumbbell curls with supination on incline bench (45 °)",
-        link: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif",
+        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/incline-dumbbell-curl.gif",
         repetisions: "3x10",
         exId: uiqueId(),
       },
@@ -136,15 +136,4 @@ const exerciseObject = [
   },
 ];
 
-export const weeksDays = [
-  "Week 1",
-  "Week 2",
-  "Week 3",
-  "Week 4",
-  "Week 5",
-  "Week 6",
-  "Week 7",
-  "Week 8",
-];
-
-export default exerciseObject;
+export default week1;
