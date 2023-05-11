@@ -1,7 +1,9 @@
+//need to update this
+
 var uiqueId = require("uniqid");
-const week2 = [
+const Week3 = [
   {
-    weekNumber: "Week2",
+    weekNumber: "Week3",
     id: uiqueId(),
     day: "Monday",
     bodyPart: "Legs, Shoulders",
@@ -46,7 +48,7 @@ const week2 = [
     ],
   },
   {
-    weekNumber: "Week2",
+    weekNumber: "Week3",
     id: uiqueId(),
     day: "Wednesday",
     bodyPart: "Chest, Triceps",
@@ -90,7 +92,7 @@ const week2 = [
     ],
   },
   {
-    weekNumber: "Week2",
+    weekNumber: "Week3",
     id: uiqueId(),
     day: "Friday",
     bodyPart: "Back, Biceps",
@@ -147,4 +149,4 @@ const week2 = [
   },
 ];
 
-export default week2;
+export default Week3;

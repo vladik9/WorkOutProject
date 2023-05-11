@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import Cards from "./Cards/Cards";
 import styles from "./Cards/Cards.module.css";
 import navStyles from "./Navigator/Navigator.module.css";
-import exerciseObject from "./weeksExercises/week2";
+import InfoModal from "./InfoModal/InfoModal";
+import appStyle from "./App.module.css";
+import week1 from "./weeksExercises/week1";
+import week2 from "./weeksExercises/week2";
+import week3 from "./weeksExercises/week3";
+
 import Navigator from "./Navigator/Navigator";
 import Modal from "./Cards/Exercise/Modal/Modal";
 const programedWeeks = [
-  "Week 1",
-  "Week 2",
-  "Week 3",
-  "Week 4",
-  "Week 5",
-  "Week 6",
-  "Week 7",
-  "Week 8",
+  "Week1",
+  "Week2",
+  "Week3",
+  "Week4",
+  "Week5",
+  "Week6",
+  "Week7",
+  "Week8",
 ];
+const exerciseObject = [...week1, ...week2, ...week3];
 function App() {
   const [selectedWeekNumber, setselectedWeekNumber] = useState(
     programedWeeks[0]
@@ -35,6 +41,9 @@ function App() {
 
   return (
     <>
+      <div className={appStyle.infoModalStyle}>
+        <InfoModal />
+      </div>
       <div className={navStyles.navigatorPosition}>
         {programedWeeks.map((item) => (
           <Navigator
@@ -45,10 +54,13 @@ function App() {
           />
         ))}
       </div>
+
       <div className={styles.currentWeekStyle}>{selectedWeekNumber}</div>
       <div className={styles.cardWrapper}>
         <Cards
-          dataObject={exerciseObject}
+          dataObject={exerciseObject.filter((el) => {
+            return el.weekNumber === selectedWeekNumber;
+          })}
           handleModalExecute={handleModalExecute}
         />
       </div>
