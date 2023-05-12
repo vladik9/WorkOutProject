@@ -1,86 +1,76 @@
+import React, { useState } from "react";
 import Cards from "./Cards/Cards";
 import styles from "./Cards/Cards.module.css";
+import navStyles from "./Navigator/Navigator.module.css";
+import InfoModal from "./InfoModal/InfoModal";
+import appStyle from "./App.module.css";
+import week1 from "./weeksExercises/week1";
+import week2 from "./weeksExercises/week2";
+import week3 from "./weeksExercises/week3";
 
-const firstDayExercise = [
-  {
-    id: "782t38726478",
-    day: "Monday",
-    bodyPart: "Legs",
-    exercises: [
-      {
-        exercise: "1. Barbell squats (high trap bar)",
-        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/the-barbell-squat.jpg",
-        repetisions: "3x12",
-        exId: "78687462387",
-      },
-      {
-        exercise: "2. Leg press (low foot placement)",
-        link: "https://graduatefitness.com/wp-content/uploads/2021/01/IMG_2775.gif",
-        repetisions: "2x15",
-        exId: "78687462357",
-      },
-      {
-        exercise: "3. Deadlift with dumbbells (pause for 1 sec at the bottom)",
-        link: "https://media.tenor.com/kyOyzUcfIpMAAAAC/dumbbell-romanian.gif",
-        repetisions3: "3x8",
-        exId: "78687422387",
-      },
-      {
-        exercise: "4. Single-leg squats (with or without support)",
-        link: "https://i0.wp.com/thumbs.gfycat.com/MammothExaltedAyeaye-size_restricted.gif?w=1155&h=840",
-        repetisions: "3x10",
-        exId: "786822462387",
-      },
-      {
-        exercise:
-          "5. Jumping jacks to maximum height (jumps  as high as possible)",
-        link: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif",
-        repetisions: "4x10",
-        exId: "786462387",
-      },
-    ],
-  },
-  {
-    id: "782t38726478",
-    day: "Monday",
-    bodyPart: "Legs",
-    exercises: [
-      {
-        exercise: "1. Barbell squats (high trap bar)",
-        link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/the-barbell-squat.jpg",
-        repetisions: "3x12",
-        exId: "78687462387",
-      },
-      {
-        exercise: "2. Leg press (low foot placement)",
-        link: "https://graduatefitness.com/wp-content/uploads/2021/01/IMG_2775.gif",
-        repetisions: "2x15",
-        exId: "78687462357",
-      },
-      {
-        exercise: "3. Deadlift with dumbbells (pause for 1 sec at the bottom)",
-        link: "https://media.tenor.com/kyOyzUcfIpMAAAAC/dumbbell-romanian.gif",
-        repetisions3: "3x8",
-        exId: "78687422387",
-      },
-      {
-        exercise: "4. Single-leg squats (with or without support)",
-        link: "https://i0.wp.com/thumbs.gfycat.com/MammothExaltedAyeaye-size_restricted.gif?w=1155&h=840",
-        repetisions: "3x10",
-        exId: "786822462387",
-      },
-      {
-        exercise:
-          "5. Jumping jacks to maximum height (jumps  as high as possible)",
-        link: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif",
-        repetisions: "4x10",
-        exId: "786462387",
-      },
-    ],
-  },
+import Navigator from "./Navigator/Navigator";
+import Modal from "./Cards/Exercise/Modal/Modal";
+const programedWeeks = [
+  "Week1",
+  "Week2",
+  "Week3",
+  "Week4",
+  "Week5",
+  "Week6",
+  "Week7",
+  "Week8",
 ];
+const exerciseObject = [...week1, ...week2, ...week3];
 function App() {
-  return <Cards className={styles.cardWrapper} data={firstDayExercise} />;
+  const [selectedWeekNumber, setselectedWeekNumber] = useState(
+    programedWeeks[0]
+  );
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentExercise, setCurrentExercise] = useState({
+    link: "",
+    nbOfSets: "",
+    category: "",
+  });
+  const handleModalExecute = (exerciseLink, repetitions) => {
+    setCurrentExercise({ link: exerciseLink, nbOfSets: repetitions });
+    setIsOpen(true);
+  };
+  const setWeekDaySelected = (weekDaySelected) => {
+    setselectedWeekNumber(weekDaySelected);
+  };
+
+  return (
+    <>
+      <div className={appStyle.infoModalStyle}>
+        <InfoModal />
+      </div>
+      <div className={navStyles.navigatorPosition}>
+        {programedWeeks.map((item) => (
+          <Navigator
+            key={item}
+            weekNumber={item}
+            setWeekDaySelected={setWeekDaySelected}
+            selectedWeekNumber={selectedWeekNumber}
+          />
+        ))}
+      </div>
+
+      <div className={styles.currentWeekStyle}>{selectedWeekNumber}</div>
+      <div className={styles.cardWrapper}>
+        <Cards
+          dataObject={exerciseObject.filter((el) => {
+            return el.weekNumber === selectedWeekNumber;
+          })}
+          handleModalExecute={handleModalExecute}
+        />
+      </div>
+      <main>
+        {isOpen && (
+          <Modal currentExercise={currentExercise} setIsOpen={setIsOpen} />
+        )}
+      </main>
+    </>
+  );
 }
 
 export default App;

@@ -1,7 +1,7 @@
 import React from "react";
 import Exercise from "../Exercise/Exercise";
 import styles from "./Card.module.css";
-export default function Card({ data }) {
+export default function Card({ data, handleModalExecute }) {
   return (
     <div className={styles.contentWraper}>
       <div className={styles.tileStyle}>
@@ -11,7 +11,7 @@ export default function Card({ data }) {
       {data.exercises.map((el) => {
         return (
           <div key={el.exId}>
-            <Exercise exercise={el} />
+            <Exercise exercise={el} handleModalExecute={handleModalExecute} />
           </div>
         );
       })}
