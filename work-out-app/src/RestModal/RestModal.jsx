@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./InfoModal.module.css";
+import styles from "./RestModal.module.css";
 import { RiErrorWarningFill } from "react-icons/ri";
-export default function InfoModal() {
+export default function RestModal() {
   return (
     <div className={(styles.modalWrapper, styles.infoModalStyleContainer)}>
       <div className={styles.modalMainContent}>

@@ -4,7 +4,7 @@ export default function Cards({ dataObject, handleModalExecute }) {
   return dataObject.map((el) => {
     return (
       <div key={el.id}>
-        <Card data={el} handleModalExecute={handleModalExecute} />
+        <Card exerciseObject={el} handleModalExecute={handleModalExecute} />
       </div>
     );
   });
