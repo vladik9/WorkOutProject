@@ -7,7 +7,7 @@ export default function RestModal() {
       <div className={styles.modalMainContent}>
         <div>
           <RiErrorWarningFill className={styles.warningMessage} />
-          Rest betweeb sets in the basic exercise (squat/bench press/ deadlift){" "}
+          Rest between sets in the basic exercise (squat/bench press/ deadlift){" "}
           <strong>4 min</strong>
         </div>
         <div className={styles.modalContent}>

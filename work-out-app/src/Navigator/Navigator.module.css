@@ -16,8 +16,7 @@
 }
 
 .navigatorElement:hover {
-  background-color: yellow;
-  color: white;
+  
   font-weight: bold;
   cursor: pointer;
 }

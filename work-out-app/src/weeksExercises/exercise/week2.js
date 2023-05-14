@@ -52,7 +52,7 @@ const week2 = [
     bodyPart: "Chest, Triceps",
     exercises: [
       {
-        exercise: "Incline bench press (30°",
+        exercise: "Incline bench press (30°)",
         link: "https://fitnessprogramer.com/wp-content/uploads/2022/07/Dumbbell-Reverse-Grip-30-Degrees-Incline-Bench-Press.gif",
         repetisions: "3x10",
         exId: uiqueId(),
