@@ -4,6 +4,7 @@ import styles from "./Cards/Cards.module.css";
 import navStyles from "./Navigator/Navigator.module.css";
 import InfoModal from "./RestModal/RestModal";
 import appStyle from "./App.module.css";
+import ExerciseTable from "./ExerciseTable/ExerciseTable";
 import {
   exerciseObject,
   programedWeeks,
@@ -62,6 +63,11 @@ function App() {
           <Modal currentExercise={currentExercise} setIsOpen={setIsOpen} />
         )}
       </main>
+      <ExerciseTable
+        dataObject={exerciseObject.filter((el) => {
+          return el.weekNumber === selectedWeekNumber;
+        })}
+      />
     </>
   );
 }
