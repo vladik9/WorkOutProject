@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Cards from "./Cards/Cards";
 import styles from "./Cards/Cards.module.css";
 import navStyles from "./Navigator/Navigator.module.css";
-import InfoModal from "./RestModal/RestModal";
+import InfoModal from "./Modals/RestModal/RestModal";
+import TableModal from "./Modals/TableModal/TableModal";
 import appStyle from "./App.module.css";
-import ExerciseTable from "./ExerciseTable/ExerciseTable";
+
 import {
   exerciseObject,
   programedWeeks,
@@ -18,11 +19,20 @@ function App() {
     programedWeeks[0]
   );
   const [isOpen, setIsOpen] = useState(false);
+  const [isTableModalOpen, setOpenTableModal] = useState(false);
   const [currentExercise, setCurrentExercise] = useState({
     link: "",
     nbOfSets: "",
     category: "",
   });
+  const [currentDayExercises, setCurrentDayExercises] = useState([]);
+
+  const handleModalExecuteShowTable = (day) => {
+    console.log("🚀 ~ file: App.js:29 ~ App ~ currentDayExercises:", day);
+    setCurrentDayExercises(day);
+    setOpenTableModal(true);
+  };
+
   const handleModalExecute = (exerciseLink, repetitions) => {
     setCurrentExercise({ link: exerciseLink, nbOfSets: repetitions });
     setIsOpen(true);
@@ -56,18 +66,23 @@ function App() {
             return el.weekNumber === selectedWeekNumber;
           })}
           handleModalExecute={handleModalExecute}
+          handleModalExecuteShowTable={handleModalExecuteShowTable}
         />
       </div>
       <main>
         {isOpen && (
           <Modal currentExercise={currentExercise} setIsOpen={setIsOpen} />
         )}
+        {isTableModalOpen && (
+          <TableModal
+            dataObject={exerciseObject.filter((el) => {
+              return el.weekNumber === selectedWeekNumber;
+            })}
+            setOpenTableModal={setOpenTableModal}
+            currentDayExercises={currentDayExercises}
+          />
+        )}
       </main>
-      <ExerciseTable
-        dataObject={exerciseObject.filter((el) => {
-          return el.weekNumber === selectedWeekNumber;
-        })}
-      />
     </>
   );
 }
