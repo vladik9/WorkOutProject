@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./TableModal.module.css";
-import { CiLink, CiSaveDown1 } from "react-icons/ci";
-const today = new Date();
+import { CiSaveDown1 } from "react-icons/ci";
+var uiqueId = require("uniqid");
+
 const Modal = ({ dataObject, setOpenTableModal, currentDayExercises }) => {
-  console.log("🚀 ~ file: TableModal.jsx:5 ~ Modal ~ dataObject:", dataObject);
   const selectedWeekObject = dataObject.filter((items) => {
     return items.day === currentDayExercises;
   });
@@ -14,60 +14,58 @@ const Modal = ({ dataObject, setOpenTableModal, currentDayExercises }) => {
         <div className={styles.modal}>
           <div className={styles.modalContent}>
             <table className={styles.tg}>
+              <tr key={uiqueId()}>
+                <td className={styles["tg-0pky"]} key={uiqueId()}>
+                  Index
+                </td>
+                <td className={styles["tg-0pky"]} key={uiqueId()}>
+                  Exercise
+                </td>
+                <td className={styles["tg-0pky"]} key={uiqueId()}>
+                  Sets
+                </td>
+                <td className={styles["tg-0pky"]} key={uiqueId()}>
+                  Weight
+                </td>
+              </tr>
               <tbody>
-                {/* <tr>
-                  <td className={styles["tg-0pky"]}>Date</td>
-                  <td className={styles["tg-0pky"]}>Exercise</td>
-                  <td className={styles["tg-0pky"]}>Sets</td>
-                  <td className={styles["tg-0pky"]}>Weight</td>
-                </tr> */}
-                <tr>
-                  {selectedWeekObject.map((item) => {
-                    return item.exercises.map((exercise, index) => {
-                      return (
-                        <tr key={"tableRowMapped " + exercise.index}>
-                          <td
-                            className={styles["tg-0pky"]}
-                            key={"date" + exercise.index}
-                          >
-                            {today.getDate()}
-                          </td>
-                          <td
-                            className={styles["tg-0pky"]}
-                            key={"date" + exercise.index}
-                          >
-                            {exercise.exercise}
-                          </td>
-                          <td
-                            className={styles["tg-0pky"]}
-                            key={"link" + exercise.index}
-                          >
-                            <div
-                              href={exercise.link}
-                              alt="gif"
-                              key={"imageLink" + exercise.index}
-                            >
-                              <CiLink key={"imageIcon" + exercise.index} />
-                            </div>
-                          </td>
-                          <td
-                            className={styles["tg-0pky"]}
-                            key={"sets" + exercise.index}
-                          >
-                            {exercise.repetisions}
-                          </td>
-                          <td
-                            className={styles["tg-0pky"]}
-                            id={"weight" + exercise.exercise}
-                          >
-                            52ks
-                          </td>
-                          <CiSaveDown1 key={"saveButton" + exercise.index} />
-                        </tr>
-                      );
-                    });
-                  })}
-                </tr>
+                {selectedWeekObject.map((set) => {
+                  return set.exercises.map((exercise, index) => {
+                    return (
+                      <tr key={uiqueId()}>
+                        <td className={styles["tg-0pky"]} key={uiqueId()}>
+                          <strong>{index + 1}</strong>
+                        </td>
+                        <td className={styles["tg-0pky"]} key={uiqueId()}>
+                          {exercise.exercise}
+                        </td>
+                        <td className={styles["tg-0pky"]} key={uiqueId()}>
+                          {exercise.repetisions}
+                        </td>
+                        <td className={styles.addExercise} key={uiqueId()}>
+                          <input className={styles.weightInput} type="number" />
+
+                          {exercise.weightHistory.map((weight, index) => {
+                            if (index === 0) return " | " + weight + "kg";
+                            else if (
+                              index ===
+                              exercise.weightHistory.length - 1
+                            )
+                              return weight + "kg | ";
+                            else return " | " + weight + "kg | ";
+                          })}
+                          <CiSaveDown1
+                            className={styles.buttonStyle}
+                            key={uiqueId()}
+                            onClick={(e) => {
+                              console.log("i am clicked");
+                            }}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  });
+                })}
               </tbody>
             </table>
           </div>

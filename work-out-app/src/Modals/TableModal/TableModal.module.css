@@ -100,3 +100,21 @@
       vertical-align: top;
       width: auto;
  }
+  .tg .weightCollumn {
+       border-color: inherit;
+       text-align: left;
+       vertical-align: top;
+       width: auto;
+  }
+  .addExercise{
+     display: flex;
+     flex-wrap: nowrap;
+     flex-direction: column;
+     align-items: center;
+  }
+  .weightInput{
+     width: 50px;
+  }
+  .buttonStyle{
+     font-size: 20px;
+  }
