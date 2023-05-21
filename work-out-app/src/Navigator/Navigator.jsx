@@ -16,7 +16,7 @@ export default function Navigator({
         setWeekDaySelected(event.target.id);
       }}
     >
-      {weekNumber}
+      Week {weekNumber.charAt(weekNumber.length - 1)}
     </div>
   );
 }

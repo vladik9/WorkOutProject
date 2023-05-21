@@ -16,7 +16,7 @@
 }
 .infoModalStyleContainer {
      width: 70%;
-     height: 80px;
+     height: auto;
      display: flex;
      justify-content: center;
      flex-direction: column;
