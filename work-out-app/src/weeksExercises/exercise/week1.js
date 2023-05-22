@@ -10,7 +10,7 @@ const week1 = [
         exercise: "Barbell squats (high trap bar)",
         link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/05/low-bar-squat-form.gif",
         repetisions: "3x12",
-        weightHistory: [1, 2, 4, 2, 32, 13, 12, 312],
+        weightHistory: [1, 2, 4, 2, 32, 13, 12, 312, 123, 123],
         exId: uiqueId(),
       },
       {

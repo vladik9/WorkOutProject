@@ -1,7 +1,11 @@
 import React from "react";
-import styles from "./Modal.module.css";
-
+import styles from "./ExerciseModal.module.css";
+import Table from "./Table/Table";
 const Modal = ({ currentExercise, setIsOpen }) => {
+  console.log(
+    "🚀 ~ file: ExerciseModal.jsx:5 ~ Modal ~ currentExercise:",
+    currentExercise
+  );
   return (
     <>
       <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
@@ -9,8 +13,7 @@ const Modal = ({ currentExercise, setIsOpen }) => {
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
             <h5 className={styles.heading}>
-              Exercise:
-              <strong> {currentExercise.nbOfSets}</strong>
+              <strong> {currentExercise.exerciseName}</strong>
             </h5>
           </div>
           <div className={styles.modalContent}>
@@ -19,6 +22,11 @@ const Modal = ({ currentExercise, setIsOpen }) => {
               src={currentExercise.link}
               alt="GIF"
             />
+            <div>
+              Sets:
+              <strong> {currentExercise.nbOfSets}</strong>
+            </div>
+            <Table history={currentExercise.history} />
           </div>
         </div>
       </div>

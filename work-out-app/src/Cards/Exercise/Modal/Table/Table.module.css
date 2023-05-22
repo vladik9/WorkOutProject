@@ -1,0 +1,102 @@
+table.greyGridTable {
+  border: 2px solid #ffffff;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table.greyGridTable td,
+table.greyGridTable th {
+  border: 1px solid #ffffff;
+  padding: 3px 4px;
+}
+
+table.greyGridTable tbody td {
+  font-size: 13px;
+}
+
+table.greyGridTable td:nth-child(even) {
+  background: #ebebeb;
+}
+
+table.greyGridTable thead {
+  background: #ffffff;
+  border-bottom: 4px solid #333333;
+}
+
+table.greyGridTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  border-left: 2px solid #333333;
+}
+
+table.greyGridTable thead th:first-child {
+  border-left: none;
+}
+
+table.greyGridTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  border-top: 4px solid #333333;
+}
+
+table.greyGridTable tfoot td {
+  font-size: 14px;
+}
+.exerciseButtons {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonAddExercise {
+  box-shadow: 0px 10px 14px -7px #3dc21b;
+  background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+  background-color: #44c767;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: lighterweight;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.buttonAddExercise:hover {
+  background: linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+  background-color: #5cbf2a;
+}
+
+.buttonResetExercises {
+  box-shadow: 0px 10px 14px -7px #f5978e;
+  background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+  background-color: #f24537;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: lighterweight;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #810e05;
+}
+
+.buttonResetExercises:hover {
+  background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+  background-color: #c62d1f;
+}
+
+.buttonAddExercise.buttonResetExercises:active {
+  position: relative;
+  top: 1px;
+}
+.inputWeight {
+  border-radius: 5px;
+  width: 25%;
+}

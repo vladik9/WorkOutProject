@@ -1,6 +1,5 @@
 import React from "react";
 import { BsBoxArrowUpRight } from "react-icons/bs";
-
 import styles from "./Exercise.module.css";
 export default function Exercise({
   exercise,
@@ -13,7 +12,14 @@ export default function Exercise({
         {exerciseIndex + 1} {exercise.exercise}
       </div>
       <strong
-        onClick={() => handleModalExecute(exercise.link, exercise.repetisions)}
+        onClick={() =>
+          handleModalExecute(
+            exercise.link,
+            exercise.repetisions,
+            exercise.weightHistory,
+            exercise.exercise
+          )
+        }
         className={styles.exerciseRepetitions}
       >
         {exercise.repetisions}
