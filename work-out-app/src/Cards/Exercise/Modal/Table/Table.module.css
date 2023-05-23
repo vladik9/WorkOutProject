@@ -46,53 +46,65 @@ table.greyGridTable tfoot {
 table.greyGridTable tfoot td {
   font-size: 14px;
 }
-.exerciseButtons {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
+ 
+.exerciseButtonsForm {
+  display: inline-flex;
+  line-height: 25px;
+  padding: 10px;
 }
-
-.buttonAddExercise {
+.buttonAddExerciseButton {
+  width: 50px;
+  height: 25px;
+  background-color: #44c767;
+  cursor: pointer;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: -10px;
   box-shadow: 0px 10px 14px -7px #3dc21b;
   background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
   background-color: #44c767;
-  border-radius: 8px;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
   font-size: 15px;
   font-weight: lighterweight;
-  padding: 5px 10px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
 }
-
-.buttonAddExercise:hover {
-  background: linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
-  background-color: #5cbf2a;
+.inputExerciseButton {
+  width: 50px;
+  height: 19px;
 }
-
-.buttonResetExercises {
+.buttonRemoveExerciseButton {
+  width: 50px;
+  height: 25px;
+  background-color: #f24537;
+  cursor: pointer;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   box-shadow: 0px 10px 14px -7px #f5978e;
   background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
   background-color: #f24537;
-  border-radius: 8px;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
   font-size: 15px;
   font-weight: lighterweight;
-  padding: 5px 10px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #810e05;
 }
 
-.buttonResetExercises:hover {
+.buttonAddExerciseButton:hover {
+  background: linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+  background-color: #5cbf2a;
+}
+
+.buttonRemoveExerciseButton:hover {
   background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
   background-color: #c62d1f;
 }
 
-.buttonAddExercise.buttonResetExercises:active {
+.buttonAddExerciseButton.buttonRemoveExerciseButton:active {
   position: relative;
   top: 1px;
 }

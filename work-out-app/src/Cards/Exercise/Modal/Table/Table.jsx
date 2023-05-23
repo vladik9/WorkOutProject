@@ -1,56 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Table.module.css";
 var uiqueId = require("uniqid");
 
 const Table = ({ history }) => {
-  const [newExerciseState, setNewExerciseState] = useState(false);
   return (
     <div className={styles.tableOverflow}>
       <table className={styles.greyGridTable}>
         <thead>
           <tr key={uiqueId()}>
-            <th key={uiqueId()}>Index</th>
-            {history.map((el, index) => {
-              return <th key={uiqueId()}>{index + 1}</th>;
+            <th key={uiqueId()}>Set</th>
+            {history.map((el, set) => {
+              return <th key={uiqueId()}>{set + 1}</th>;
             })}
           </tr>
         </thead>
         <tbody>
           <tr key={uiqueId()}>
             <td key={uiqueId()}>Weight</td>
-            {history.map((el, index) => {
+            {history.map((el) => {
               return <td key={uiqueId()}>{el} kg</td>;
             })}
           </tr>
         </tbody>
+        <tfoot>
+          <tr key={uiqueId()}>
+            <td key={uiqueId()}>Total:</td>
+            {/* here will be summ of all kg */}
+          </tr>
+        </tfoot>
       </table>
-      <div className={styles.exerciseButtons}>
-        <button
-          className={styles.buttonAddExercise}
-          onClick={() => {
-            console.log("adding exercies");
-            setNewExerciseState(!newExerciseState);
-          }}
-        >
-          add exercise
-        </button>
-        {newExerciseState && (
+      <div className={styles.exerciseButtonsForm}>
+        <div className={styles.buttonAddExerciseButton}>+</div>
+        <div className={styles.inputExerciseButton}>
           <input
-            className={styles.inputWeight}
+            className={styles.inputExerciseButton}
             id="exerciseWeight"
             min="1"
             type="number"
-            placeholder="exercise weight"
           />
-        )}
-        <button
-          className={styles.buttonResetExercises}
-          onClick={() => {
-            console.log("removing exercies");
-          }}
-        >
-          remove exercise
-        </button>
+        </div>
+        <div className={styles.buttonRemoveExerciseButton}>-</div>
       </div>
     </div>
   );
