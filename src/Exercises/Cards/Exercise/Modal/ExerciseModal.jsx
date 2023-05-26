@@ -2,10 +2,6 @@ import React from "react";
 import styles from "./ExerciseModal.module.css";
 import Table from "./Table/Table";
 const Modal = ({ currentExercise, setIsOpen }) => {
-  console.log(
-    "🚀 ~ file: ExerciseModal.jsx:5 ~ Modal ~ currentExercise:",
-    currentExercise
-  );
   return (
     <>
       <div className={styles.darkBG} onClick={() => setIsOpen(false)} />

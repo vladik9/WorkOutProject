@@ -1,12 +1,14 @@
 import React from "react";
-import AppWrapper from "./AppWrapper/AppWrapper";
-import WorkOutContext from "./AppWrapper/AppWrapper";
+import WorkOutContextWrapper from "./Exercises/WorkoutContext/WorkOutContextWrapper";
+import AppWrapper from "./Exercises/AppWrapper/AppWrapper";
+import Nutrition from "./Nutrition/Nutrition";
 
 function App() {
   return (
-    <WorkOutContext>
-      <AppWrapper />
-    </WorkOutContext>
+    <WorkOutContextWrapper>
+      <Nutrition />
+      {/* <AppWrapper /> */}
+    </WorkOutContextWrapper>
   );
 }
 

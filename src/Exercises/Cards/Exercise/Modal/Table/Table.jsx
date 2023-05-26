@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Table.module.css";
+// import { WorkOutContextObject } from "../../../../../WorkoutContext/WorkOutContextWrapper";
+import { WorkOutContextObject } from "../../../../WorkoutContext/WorkOutContextWrapper";
+
 var uiqueId = require("uniqid");
 
 const Table = ({ history }) => {
+  const ctx = useContext(WorkOutContextObject);
+
   return (
     <div className={styles.tableOverflow}>
       <table className={styles.greyGridTable}>
@@ -30,7 +35,14 @@ const Table = ({ history }) => {
         </tfoot>
       </table>
       <div className={styles.exerciseButtonsForm}>
-        <div className={styles.buttonAddExerciseButton}>+</div>
+        <div
+          className={styles.buttonAddExerciseButton}
+          onClick={() => {
+            ctx.handleAddExercise();
+          }}
+        >
+          +
+        </div>
         <div className={styles.inputExerciseButton}>
           <input
             className={styles.inputExerciseButton}

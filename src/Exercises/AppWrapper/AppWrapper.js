@@ -3,14 +3,14 @@ import Cards from "../Cards/Cards";
 import styles from "../Cards/Cards.module.css";
 import navStyles from "../Navigator/Navigator.module.css";
 import InfoModal from "../Modals/RestModal/RestModal";
-import appStyle from "../App.module.css";
+import appStyle from "./AppWraper.module.css";
 import Navigator from "../Navigator/Navigator";
-import Modal from "../Cards/Exercise/Modal/ExerciseModal";
-import { WorkOutContextObject } from "../Context/WorkOutContext";
+import ExerciseModal from "../Cards/Exercise/Modal/ExerciseModal";
+import { WorkOutContextObject } from "../WorkoutContext/WorkOutContextWrapper";
 
 function AppWrapper() {
   const ctx = useContext(WorkOutContextObject);
-  console.log(ctx);
+
   return (
     <>
       <div className={appStyle.infoModalStyle}>
@@ -18,12 +18,7 @@ function AppWrapper() {
       </div>
       <div className={navStyles.navigatorPosition}>
         {ctx.programedWeeks.map((item) => (
-          <Navigator
-            key={item}
-            weekNumber={item}
-            setWeekDaySelected={ctx.setWeekDaySelected}
-            selectedWeekNumber={ctx.selectedWeekNumber}
-          />
+          <Navigator key={item} weekNumber={item} />
         ))}
       </div>
 
@@ -35,12 +30,11 @@ function AppWrapper() {
           dataObject={ctx.exerciseObject.filter((el) => {
             return el.weekNumber === ctx.selectedWeekNumber;
           })}
-          handleModalExecute={ctx.handleModalExecute}
         />
       </div>
       <main>
         {ctx.isOpen && (
-          <Modal
+          <ExerciseModal
             currentExercise={ctx.currentExercise}
             setIsOpen={ctx.setIsOpen}
           />

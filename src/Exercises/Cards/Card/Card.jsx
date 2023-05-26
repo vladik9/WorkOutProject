@@ -1,7 +1,8 @@
 import React from "react";
 import Exercise from "../Exercise/Exercise";
 import styles from "./Card.module.css";
-export default function Card({ exerciseObject, handleModalExecute }) {
+
+export default function Card({ exerciseObject }) {
   return (
     <div className={styles.contentWraper}>
       <div className={styles.tileStyle}>
@@ -14,11 +15,7 @@ export default function Card({ exerciseObject, handleModalExecute }) {
       {exerciseObject.exercises.map((el, index) => {
         return (
           <div key={el.exId}>
-            <Exercise
-              exercise={el}
-              handleModalExecute={handleModalExecute}
-              exerciseIndex={index}
-            />
+            <Exercise exercise={el} exerciseIndex={index} />
           </div>
         );
       })}
