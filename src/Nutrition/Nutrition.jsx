@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Nutrition.module.css";
+import pfcStyles from "./CaloriesCalculator/CaloriesCalculator.module.css";
 import CaloriesCalculator from "./CaloriesCalculator/CaloriesCalculator";
 export default function Nutrition() {
   return (
@@ -33,6 +34,18 @@ export default function Nutrition() {
           It's important to ensure we get the right amount of each element every
           day
         </p>
+      </div>
+      <div className={pfcStyles.PFCMenu}>
+        <ol>
+          <span value="protein">Protein</span>
+          <span value="fats">Fats</span>
+          <span value="carbo">Carbohydrates</span>
+          <div className={pfcStyles["hr-container"]}>
+            <hr className={styles.singleProteinHr} />
+            <hr className={styles.singleProteinHr} />
+            <hr className={styles.singleProteinHr} />
+          </div>
+        </ol>
       </div>
       <p>
         For instance, a woman wighing <strong>60 kg</strong> should consume 60 g

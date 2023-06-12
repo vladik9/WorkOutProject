@@ -5,6 +5,25 @@ export default function CaloriesCalculator() {
   const [gendre, setGendre] = useState("woman");
   const [weight, setWeight] = useState(20);
   const [caloriesResult, setCaloriesResult] = useState();
+  const [pfcSelected, setPfcSelected] = useState(0); //0 p, 1 f, 2 c
+
+  const handlePFCSelected = (e) => {
+    const selected = e.target.getAttribute("value");
+    switch (selected) {
+      case "protein":
+        setPfcSelected(0);
+        break;
+      case "fats":
+        setPfcSelected(1);
+        break;
+      case "carbo":
+        setPfcSelected(2);
+        break;
+
+      default:
+        setPfcSelected(0);
+    }
+  };
 
   const handleCaloriesCalculations = (e) => {
     setGendre(e.target.value);
@@ -34,9 +53,9 @@ export default function CaloriesCalculator() {
             mind that this figure doesn't take into account any physical
             acticity during the day.
           </p>
-          <h3>for women: minimum = your weight x 22kcal</h3>
+          <h3>for women: minimum = your weight x 22 kcal</h3>
 
-          <h3>for men: minimum = your weight x 24,2kcal</h3>
+          <h3>for men: minimum = your weight x 24,2 kcal</h3>
 
           <div className={styles.radioCalories}>
             <input
@@ -56,7 +75,6 @@ export default function CaloriesCalculator() {
             />
             Man
           </div>
-
           <input
             className={styles.caloryInput}
             type="number"
@@ -77,6 +95,34 @@ export default function CaloriesCalculator() {
         </div>
       </div>
       <h4>Also, each item has a different caloric value</h4>
+
+      <div className={styles.PFCMenu}>
+        <ol>
+          <span value="protein" onClick={handlePFCSelected}>
+            Protein
+          </span>
+          <span value="fats" onClick={handlePFCSelected}>
+            Fats
+          </span>
+          <span value="carbo" onClick={handlePFCSelected}>
+            Carbohydrates
+          </span>
+          <div className={styles["hr-container"]}>
+            <hr
+              className={styles.proteinHr}
+              style={{ borderColor: pfcSelected === 0 ? "yellow" : "" }}
+            />
+            <hr
+              className={styles.fatsHr}
+              style={{ borderColor: pfcSelected === 1 ? "yellow" : "" }}
+            />
+            <hr
+              className={styles.carboHr}
+              style={{ borderColor: pfcSelected === 2 ? "yellow" : "" }}
+            />
+          </div>
+        </ol>
+      </div>
     </div>
   );
 }
