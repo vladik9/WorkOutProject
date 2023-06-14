@@ -5,25 +5,6 @@ export default function CaloriesCalculator() {
   const [gendre, setGendre] = useState("woman");
   const [weight, setWeight] = useState(20);
   const [caloriesResult, setCaloriesResult] = useState();
-  const [pfcSelected, setPfcSelected] = useState(0); //0 p, 1 f, 2 c
-
-  const handlePFCSelected = (e) => {
-    const selected = e.target.getAttribute("value");
-    switch (selected) {
-      case "protein":
-        setPfcSelected(0);
-        break;
-      case "fats":
-        setPfcSelected(1);
-        break;
-      case "carbo":
-        setPfcSelected(2);
-        break;
-
-      default:
-        setPfcSelected(0);
-    }
-  };
 
   const handleCaloriesCalculations = (e) => {
     setGendre(e.target.value);
@@ -95,34 +76,6 @@ export default function CaloriesCalculator() {
         </div>
       </div>
       <h4>Also, each item has a different caloric value</h4>
-
-      <div className={styles.PFCMenu}>
-        <ol>
-          <span value="protein" onClick={handlePFCSelected}>
-            Protein
-          </span>
-          <span value="fats" onClick={handlePFCSelected}>
-            Fats
-          </span>
-          <span value="carbo" onClick={handlePFCSelected}>
-            Carbohydrates
-          </span>
-          <div className={styles["hr-container"]}>
-            <hr
-              className={styles.proteinHr}
-              style={{ borderColor: pfcSelected === 0 ? "yellow" : "" }}
-            />
-            <hr
-              className={styles.fatsHr}
-              style={{ borderColor: pfcSelected === 1 ? "yellow" : "" }}
-            />
-            <hr
-              className={styles.carboHr}
-              style={{ borderColor: pfcSelected === 2 ? "yellow" : "" }}
-            />
-          </div>
-        </ol>
-      </div>
     </div>
   );
 }

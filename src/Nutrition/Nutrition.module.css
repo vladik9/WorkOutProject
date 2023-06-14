@@ -44,13 +44,33 @@ h2 {
   align-items: center;
   justify-content: center;
  }
-    .singleProteinHr{
-        width: 30%;
-        margin-right: 5px;
-      }
-    .singleCarboHr {
-        width: 30%;
+ 
+ .proteinHr,
+ .carboHr {
+   width: 35%;
+ }
+
+ .fatsHr {
+   width: 30%;
+ }
+
+    .PFCMenu {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+  
     }
-    .singleFatsHr {
-         width: 30%;
+  
+    .PFCMenu span {
+      margin: 10px;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      cursor: pointer;
+  
+    }
+  
+    .hr-container {
+      display: flex;
+      justify-content: space-between;
+  
     }
