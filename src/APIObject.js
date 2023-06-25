@@ -1,9 +1,23 @@
+import token from "./apiKeys";
+
 const apiOptions = {
   method: "GET",
   url: "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
   headers: {
-    "X-RapidAPI-Key": "8e9fc8d0afmshcc4af32a9be6604p1a8318jsndee4724a6a76",
+    "X-RapidAPI-Key": token,
     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
   },
 };
+
+const apiOptionsExercise = {
+  method: "GET",
+  url: "https://exercisedb.p.rapidapi.com/exercises/bodyPart/",
+  headers: {
+    "X-RapidAPI-Key": token,
+    "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+  },
+};
+export { apiOptionsExercise };
+
 export default apiOptions;
+// https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/details
