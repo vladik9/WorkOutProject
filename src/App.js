@@ -8,8 +8,8 @@ import Nutrition from "./Nutrition/Nutrition";
 function App() {
   return (
     <WorkOutContextWrapper>
-      {/* <Nutrition /> */}
-      {/* <AppWrapper /> */}
+      <Nutrition />
+      <AppWrapper />
 
       <NewExercise />
     </WorkOutContextWrapper>

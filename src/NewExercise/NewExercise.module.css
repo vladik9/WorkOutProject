@@ -14,5 +14,17 @@
   border: 2px solid yellow;
   
 }
+.newExerciseContainer{
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
 
+}
 
+.exerciseWrapper{
+
+}
+.exerciseGif{
+  width: 200px;
+  height: 10px;
+}
