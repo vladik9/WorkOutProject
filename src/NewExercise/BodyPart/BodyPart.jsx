@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { apiOptionsExercise } from "../../APIObject";
+import { apiOptionsExercise } from "../../APIObjects";
 import axios from "axios";
 
 import styles from "./BodyPart.module.css";

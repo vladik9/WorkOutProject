@@ -1,4 +1,4 @@
-import token from "./apiKeys";
+import token from "./token";
 
 const apiOptions = {
   method: "GET",

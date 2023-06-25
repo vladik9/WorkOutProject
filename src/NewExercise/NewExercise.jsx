@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import apiOptions from "../APIObject";
+import apiOptions from "../APIObjects";
 import styles from "./NewExercise.module.css";
 import navStyles from "./BodyPart/BodyPart.module.css";
 import BodyPart from "./BodyPart/BodyPart";
